@@ -11,7 +11,7 @@ from typing import Tuple, List
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from config.params import (
-    DATA_DIR, SHARED_MODELS_DIR, SHARED_EMBEDDINGS_DIR, AE_TRAIN_FIGURES_DIR,
+    DATA_DIR, SHARED_MODELS_DIR, SHARED_EMBEDDINGS_DIR, PROJECT_ROOT,
     DEFAULT_BATCH_SIZE, DEFAULT_PATCH_SIZE, DEFAULT_NUM_EPOCHS, DEFAULT_LEARNING_RATE,
     DEFAULT_NUM_WORKERS, DEFAULT_PIN_MEMORY, DEFAULT_DEVICE
 )
@@ -96,9 +96,9 @@ def main():
     model_save_dir = os.path.join(SHARED_MODELS_DIR, patch_dir, args.dataset)
     embeddings_save_dir = os.path.join(SHARED_EMBEDDINGS_DIR, patch_dir, args.dataset)
 
-    ae_train_figures_dir = os.path.join(AE_TRAIN_FIGURES_DIR, patch_dir, args.dataset)
-    run_dir = os.path.join(ae_train_figures_dir, f"{args.dataset}_tae_{timestamp}")
-    results_save_dir = os.path.join(run_dir, 'figures')
+    training_figures_dir = os.path.join(PROJECT_ROOT, 'figures', 'training')
+    run_dir = os.path.join(training_figures_dir, f"{args.dataset}_tae_{timestamp}")
+    results_save_dir = os.path.join(run_dir, 'plots')
 
     for directory in [model_save_dir, embeddings_save_dir, results_save_dir]:
         os.makedirs(directory, exist_ok=True)

@@ -10,7 +10,8 @@ RAW_DATA_DIR: str = os.path.join(DATA_DIR, 'raw')
 # Main directories
 SHARED_DIR: str = os.path.join(DATA_DIR, 'shared')  # For shared resources across experiments
 EXPERIMENTS_DIR: str = os.path.join(DATA_DIR, 'experiments')  # For experiment outputs
-AE_TRAIN_FIGURES_DIR: str = os.path.join(DATA_DIR, 'training_figures')  # For autoencoder training figures
+RESULTS_DIR: str = os.path.join(DATA_DIR, 'results')  # For results
+FIGURES_DIR: str = os.path.join(PROJECT_ROOT, 'figures')  # For all figures and visualisations
 
 # Shared resources subdirectories
 SHARED_MODELS_DIR: str = os.path.join(SHARED_DIR, 'models')  # Trained models
@@ -31,7 +32,8 @@ all_directories = [
     EXPERIMENTS_DIR,
     SUPERVISED_EXPERIMENTS_DIR,
     SEMI_SUPERVISED_EXPERIMENTS_DIR,
-    AE_TRAIN_FIGURES_DIR
+    RESULTS_DIR,
+    FIGURES_DIR
 ]
 
 for directory in all_directories:
@@ -50,11 +52,4 @@ DEFAULT_EMBEDDING_BATCH_SIZE = 128
 DEFAULT_DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 DEFAULT_NUM_WORKERS = 2
 DEFAULT_PIN_MEMORY = True
-
-# Random seed for reproducibility
 DEFAULT_RANDOM_SEED = 42
-
-# Export configuration
-DEFAULT_RESULTS_FORMAT = 'csv'
-DEFAULT_FIGURE_FORMAT = 'png'
-DEFAULT_FIGURE_DPI = 600
