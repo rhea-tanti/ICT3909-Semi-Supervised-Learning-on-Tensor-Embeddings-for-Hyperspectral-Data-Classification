@@ -1,14 +1,3 @@
-#!/usr/bin/env python3
-"""
-Analyse and compare model parameters for CAE and TAE across all datasets.
-
-Generates a comprehensive report comparing parameter counts, efficiency,
-and model architectures for both Convolutional and Tensor Autoencoders.
-
-Usage:
-    python -m scripts.analyse_ae_parameters [--output-file FILE] [--patch-size SIZE]
-"""
-
 import argparse
 import io
 import os

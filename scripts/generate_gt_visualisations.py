@@ -1,10 +1,3 @@
-"""
-Generate ground truth visualisations for hyperspectral datasets.
-
-Usage:
-    python -m scripts.generate_ground_truth_visualisations [--dataset DATASET] [--output-dir DIR]
-"""
-
 import argparse
 import os
 import sys

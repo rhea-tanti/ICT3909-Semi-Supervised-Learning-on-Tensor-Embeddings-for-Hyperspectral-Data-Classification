@@ -710,7 +710,6 @@ class BaseSupervisedTrainer:
         parser = self.create_base_parser()
         args, split_file = process_training_args(parser)
 
-        # Determine which models to train
         models_to_train = self.available_models if 'all' in args.models else args.models
 
         print(f"Training {len(models_to_train)} supervised models on all splits...")

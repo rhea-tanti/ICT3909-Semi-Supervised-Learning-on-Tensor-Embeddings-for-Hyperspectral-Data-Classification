@@ -134,16 +134,6 @@ python -m scripts.train_semi_boost --dataset Pavia --embedding_type cae --base_m
 python -m scripts.train_semi_boost --dataset Pavia --embedding_type cae --training_set train_10 --all
 ```
 
-#### Train All SSL Algorithms
-
-```bash
-# Run all SSL algorithms with all combinations (default: train_5)
-python -m scripts.train_all_ssl --dataset Pavia --embedding_type cae
-
-# Run specific algorithms only on train_10
-python -m scripts.train_all_ssl --dataset Pavia --embedding_type cae --algorithms co_training tri_training --training_set train_10
-```
-
 ### 5. Export Results to CSV
 
 #### Generate CSV Results
